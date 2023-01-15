@@ -1,0 +1,21 @@
+(Solution Q1)
+SELECT invoice.*
+FROM invoice
+where invoice.invoicedate between "2013-01-01" and "2013-12-31"
+(Solution Q2)
+SELECT firstName,lastName,country
+FROM customer
+WHERE country IN("Brazil","Canada","India","Sweden");
+(Solution Q3)
+SELECT track.name ,track.composer,album.title
+FROM track
+INNER JOIN album
+ON album.albumid=track.albumid
+WHERE name  LIKE 'A%' AND composer IS NOT NULL;
+(Solution Q4)
+SELECT customer.firstname, customer.lastname, invoice.total
+FROM customer
+JOIN invoice
+ON customer.customerid =invoice.customerid
+ORDER BY invoice.total DESC 
+LIMIT 10 ;
